@@ -1,0 +1,140 @@
+/* ============================================================
+   ALTURA · café de especialidad
+   Sistema de diseño — Sesión 16 (Material Design)
+
+   Material 3 organiza el color por ROLES, no por colores sueltos.
+   Cada fondo (primary, surface...) tiene su pareja "on-*" para el
+   texto que se coloca encima. Cambiar un tema = cambiar variables.
+   ============================================================ */
+
+:root,
+[data-tema="claro"] {
+  color-scheme: light;
+
+  /* Roles principales */
+  --primary: #6a4327;
+  --on-primary: #ffffff;
+  --primary-container: #f3dcc6;
+  --on-primary-container: #291505;
+
+  --secondary: #565d33;
+  --on-secondary: #ffffff;
+  --secondary-container: #dfe6b6;
+  --on-secondary-container: #171e00;
+
+  --tertiary: #98462a;
+  --on-tertiary: #ffffff;
+  --tertiary-container: #ffdbcf;
+  --on-tertiary-container: #3a0b00;
+
+  /* Superficies y texto */
+  --surface: #faf4ea;
+  --on-surface: #211a13;
+  --surface-container-low: #f3ebde;
+  --surface-container: #eee3d3;
+  --surface-container-high: #e7dbc9;
+  --on-surface-variant: #52453a;
+  --outline: #857566;
+  --outline-variant: #d8c9b8;
+  --inverse-surface: #372f27;
+  --inverse-on-surface: #f8efe2;
+
+  --error: #b3261e;
+  --on-error: #ffffff;
+  --error-container: #f9dedc;
+  --on-error-container: #410e0b;
+
+  /* Sombras: mismo tinte cálido en ambos temas */
+  --sombra: 45 28 12;
+  --elev-0: none;
+  --elev-1: 0 1px 2px rgb(var(--sombra) / .18), 0 1px 3px 1px rgb(var(--sombra) / .10);
+  --elev-2: 0 1px 2px rgb(var(--sombra) / .18), 0 2px 6px 2px rgb(var(--sombra) / .10);
+  --elev-3: 0 4px 8px 3px rgb(var(--sombra) / .10), 0 1px 3px rgb(var(--sombra) / .22);
+  --elev-4: 0 6px 10px 4px rgb(var(--sombra) / .10), 0 2px 3px rgb(var(--sombra) / .22);
+  --elev-5: 0 8px 12px 6px rgb(var(--sombra) / .10), 0 4px 4px rgb(var(--sombra) / .24);
+
+  /* Tono de superficie en reposo (elevación sin sombra dura) */
+  --tinte-superficie: transparent;
+}
+
+[data-tema="oscuro"] {
+  color-scheme: dark;
+
+  --primary: #ecc3a2;
+  --on-primary: #40280f;
+  --primary-container: #573d22;
+  --on-primary-container: #ffdcc2;
+
+  --secondary: #c4ca94;
+  --on-secondary: #2d3207;
+  --secondary-container: #44491f;
+  --on-secondary-container: #e1e6b6;
+
+  --tertiary: #ffb59d;
+  --on-tertiary: #571d09;
+  --tertiary-container: #7a2e17;
+  --on-tertiary-container: #ffdbcf;
+
+  --surface: #17120c;
+  --on-surface: #ece0d3;
+  --surface-container-low: #1f1912;
+  --surface-container: #251e16;
+  --surface-container-high: #30281f;
+  --on-surface-variant: #d6c3b3;
+  --outline: #a08d7d;
+  --outline-variant: #51453a;
+  --inverse-surface: #ece0d3;
+  --inverse-on-surface: #372f27;
+
+  --error: #ffb4ab;
+  --on-error: #690005;
+  --error-container: #93000a;
+  --on-error-container: #ffdad6;
+
+  --sombra: 0 0 0;
+  --elev-1: 0 1px 2px rgba(0, 0, 0, .5), 0 1px 3px 1px rgba(0, 0, 0, .35);
+  --elev-2: 0 1px 2px rgba(0, 0, 0, .5), 0 2px 6px 2px rgba(0, 0, 0, .35);
+  --elev-3: 0 4px 8px 3px rgba(0, 0, 0, .35), 0 1px 3px rgba(0, 0, 0, .5);
+  --elev-4: 0 6px 10px 4px rgba(0, 0, 0, .35), 0 2px 3px rgba(0, 0, 0, .5);
+  --elev-5: 0 8px 12px 6px rgba(0, 0, 0, .35), 0 4px 4px rgba(0, 0, 0, .55);
+
+  --tinte-superficie: transparent;
+}
+
+/* ---------- Tipografía ---------- */
+:root {
+  --fuente-ui: "Roboto", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --fuente-display: "Fraunces", "Georgia", "Times New Roman", serif;
+
+  --display-xl: clamp(3.1rem, 8vw, 6.5rem);
+  --display-m: clamp(2.4rem, 5vw, 4rem);
+  --headline-l: clamp(1.9rem, 3.6vw, 2.9rem);
+  --headline-m: clamp(1.5rem, 2.6vw, 2rem);
+  --title-l: 1.375rem;
+  --title-m: 1.0625rem;
+  --body-l: 1.0625rem;
+  --body-m: .9375rem;
+  --body-s: .8375rem;
+  --label-l: .875rem;
+  --label-m: .75rem;
+
+  /* ---------- Forma ---------- */
+  --radio-xs: 6px;
+  --radio-sm: 10px;
+  --radio-md: 14px;
+  --radio-lg: 20px;
+  --radio-xl: 28px;
+  --radio-full: 999px;
+
+  /* ---------- Movimiento ---------- */
+  --curva: cubic-bezier(.2, 0, 0, 1);
+  --curva-suave: cubic-bezier(.3, 0, 0, 1);
+  --rapido: 160ms;
+  --medio: 280ms;
+  --lento: 520ms;
+
+  /* ---------- Estructura ---------- */
+  --ancho: 1180px;
+  --margen: clamp(20px, 4.5vw, 56px);
+  --barra: 72px;
+}

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es" data-tema="claro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro · ALTURA — Sesión 16</title>
+  <meta name="description" content="Formulario de reserva para una cata de café construido con los componentes oficiales de Material Web. Ejercicio 4 de la Sesión 16.">
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,300..500,0..1,0&display=swap" rel="stylesheet">
+  <script src="../assets/js/theme.js"></script>
+  <script type="importmap">
+    {
+      "imports": {
+        "@material/web/": "https://esm.run/@material/web/"
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="registro.css">
+</head>
+<body data-pagina="registro">
+  <a class="salto-contenido" href="#contenido">Saltar al contenido</a>
+
+  <header class="topbar" data-topbar data-nav="cerrada">
+    <div class="topbar__inner">
+      <a class="marca" href="../index.html" aria-label="ALTURA, inicio">
+        <span class="marca__sello" aria-hidden="true">A</span>
+        <span class="marca__texto">ALTURA<small>café de especialidad</small></span>
+      </a>
+      <nav class="nav" id="nav-principal" aria-label="Navegación principal">
+        <a class="nav__enlace" data-nav="inicio" href="../index.html">Inicio</a>
+        <a class="nav__enlace" data-nav="contacto" href="../propuesto-1-contacto/index.html">Contacto</a>
+        <a class="nav__enlace" data-nav="carta" href="../propuesto-2-carta/index.html">Carta</a>
+        <a class="nav__enlace" data-nav="temas" href="../propuesto-3-temas/index.html">Temas</a>
+        <a class="nav__enlace" data-nav="registro" href="index.html">Registro</a>
+        <a class="nav__enlace" data-nav="clase" href="../index.html#clase">Clase</a>
+      </nav>
+      <div class="topbar__acciones">
+        <button class="icon-btn" type="button" data-tema-toggle aria-pressed="false" aria-label="Activar tema oscuro">
+          <span class="material-symbols-outlined" data-tema-icono aria-hidden="true">dark_mode</span>
+        </button>
+        <button class="icon-btn nav-abrir" type="button" data-nav-toggle aria-expanded="false" aria-controls="nav-principal" aria-label="Abrir menú">
+          <span class="material-symbols-outlined" aria-hidden="true">menu</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenido" class="pagina">
+    <div class="contenedor">
+      <section class="reg-hero" aria-labelledby="titulo-registro">
+        <div data-revelar>
+          <p class="etiqueta">Propuesto 4 · Material Web</p>
+          <h1 class="titulo-pagina" id="titulo-registro">Una taza reservada,<br><em>a tu nombre.</em></h1>
+          <p class="reg-hero__bajada">
+            Cata de origen en Barranco: seis cafés, dieciséis tazas y una hora y
+            media para entender de dónde viene lo que tomas. La reserva se hace
+            con los componentes oficiales de Material Web.
+          </p>
+          <ul class="reg-datos">
+            <li>
+              <span class="material-symbols-outlined" aria-hidden="true">calendar_today</span>
+              Jueves 3 de diciembre · 7:00 p.m.
+            </li>
+            <li>
+              <span class="material-symbols-outlined" aria-hidden="true">location_on</span>
+              Barranco · Av. Miguel Grau 318
+            </li>
+            <li>
+              <span class="material-symbols-outlined" aria-hidden="true">local_cafe</span>
+              S/ 45 · seis degustaciones y panela
+            </li>
+          </ul>
+        </div>
+
+        <aside class="boleto" aria-label="Ficha de la cata" data-revelar style="--retraso:90ms">
+          <header class="boleto__cabeza">
+            <span>Cata de origen · N.º 016</span>
+            <span>ALTURA</span>
+          </header>
+          <div class="boleto__cuerpo">
+            <p class="boleto__fecha" aria-hidden="true">03<span>DIC</span></p>
+            <dl class="boleto__lista">
+              <div>
+                <dt>Hora</dt>
+                <dd>7:00 p.m.</dd>
+              </div>
+              <div>
+                <dt>Duración</dt>
+                <dd>90 minutos</dd>
+              </div>
+              <div>
+                <dt>Sede</dt>
+                <dd>Barranco</dd>
+              </div>
+            </dl>
+          </div>
+          <div class="boleto__perforacion" aria-hidden="true"></div>
+          <div class="boleto__cupos">
+            <div class="boleto__cupos-fila">
+              <span><strong data-cupos>6</strong> de 16 tazas</span>
+              <span data-quedan>Quedan 10</span>
+            </div>
+            <md-linear-progress value="0.375" aria-label="Cupos reservados de la cata"></md-linear-progress>
+          </div>
+          <footer class="boleto__pie">
+            <span>Av. Miguel Grau 318</span>
+            <span>Barranco, Lima</span>
+          </footer>
+        </aside>
+      </section>
+
+      <section class="reg-bloque" aria-labelledby="titulo-formulario">
+        <header class="reg-cabecera" data-revelar>
+          <div>
+            <p class="etiqueta">Registro</p>
+            <h2 class="titulo-bloque" id="titulo-formulario">Reserva tu<br><em>lugar en la mesa.</em></h2>
+          </div>
+          <p>
+            Los campos son <code>&lt;md-outlined-text-field&gt;</code>; la sede,
+            un <code>&lt;md-outlined-select&gt;</code>; la confirmación, un
+            <code>&lt;md-dialog&gt;</code>. La validación es nuestra.
+          </p>
+        </header>
+
+        <div class="reg-panel" data-revelar>
+          <p class="reg-componentes" aria-hidden="true">
+            <span class="chip">md-outlined-text-field</span>
+            <span class="chip">md-outlined-select</span>
+            <span class="chip">md-checkbox</span>
+            <span class="chip">md-switch</span>
+            <span class="chip">md-filled-button</span>
+            <span class="chip">md-dialog</span>
+          </p>
+
+          <noscript>
+            <p class="reg-noscript">Este formulario usa componentes web. Actívalos abriendo la página desde un servidor local con JavaScript habilitado.</p>
+          </noscript>
+
+          <form class="reg-form" id="form-registro" novalidate>
+            <div class="reg-rejilla">
+              <md-outlined-text-field
+                label="Nombre y apellido"
+                name="nombre"
+                autocomplete="name"
+                required></md-outlined-text-field>
+
+              <md-outlined-text-field
+                label="Correo"
+                name="correo"
+                type="email"
+                autocomplete="email"
+                supporting-text="Ahí llega el código de la reserva."
+                required></md-outlined-text-field>
+
+              <md-outlined-text-field
+                label="Teléfono (opcional)"
+                name="telefono"
+                type="tel"
+                autocomplete="tel"></md-outlined-text-field>
+
+              <md-outlined-select label="Sede" name="sede" value="barranco">
+                <md-select-option value="barranco">
+                  <div slot="headline">Barranco</div>
+                </md-select-option>
+                <md-select-option value="miraflores">
+                  <div slot="headline">Miraflores</div>
+                </md-select-option>
+              </md-outlined-select>
+            </div>
+
+            <label class="reg-opcion">
+              <md-checkbox name="acepto" touch-target="wrapper"></md-checkbox>
+              <span>Acepto que me escriban solo para coordinar esta cata y que
+              este formulario es parte de un ejercicio académico.</span>
+            </label>
+
+            <label class="reg-opcion">
+              <md-switch name="recordatorio" touch-target="wrapper"></md-switch>
+              <span>Enviarme un recordatorio la mañana del jueves.</span>
+            </label>
+
+            <p class="reg-error" data-error role="alert" hidden></p>
+
+            <div class="reg-acciones">
+              <md-filled-button type="submit">Reservar mi taza</md-filled-button>
+              <md-text-button type="reset">Limpiar</md-text-button>
+              <span class="reg-nota">Simulación: no se envía nada a ningún servidor.</span>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section class="reg-tecnica" aria-labelledby="titulo-tecnica">
+        <header class="reg-cabecera" data-revelar>
+          <div>
+            <p class="etiqueta">Cómo está hecho</p>
+            <h2 class="titulo-bloque" id="titulo-tecnica">Componentes ajenos,<br><em>sistema propio.</em></h2>
+          </div>
+          <p>Material Web trae el comportamiento; los colores y la tipografía siguen saliendo de <code>tokens.css</code>.</p>
+        </header>
+
+        <ol class="reg-tecnica__lista">
+          <li data-revelar>
+            <span class="reg-tecnica__num" aria-hidden="true">01</span>
+            <h3>Importmap, sin build</h3>
+            <p>Los componentes se cargan como módulos ES desde un CDN. No hay <code>npm install</code> ni paso de compilación.</p>
+          </li>
+          <li data-revelar style="--retraso:70ms">
+            <span class="reg-tecnica__num" aria-hidden="true">02</span>
+            <h3>Tokens mapeados</h3>
+            <p>Los <code>--md-sys-color-*</code> apuntan a nuestras variables, así que el modo noche también funciona aquí.</p>
+          </li>
+          <li data-revelar style="--retraso:140ms">
+            <span class="reg-tecnica__num" aria-hidden="true">03</span>
+            <h3>El diálogo devuelve el foco</h3>
+            <p><code>md-dialog</code> se abre con <code>show()</code> y, al cerrarse, regresa el foco al botón que lo lanzó.</p>
+          </li>
+        </ol>
+
+        <pre class="reg-codigo" data-revelar><code>&lt;script type="importmap"&gt;
+  { "imports": { "@material/web/": "https://esm.run/@material/web/" } }
+&lt;/script&gt;
+
+// registro.js
+import '@material/web/all.js';</code></pre>
+      </section>
+    </div>
+  </main>
+
+  <md-dialog id="dialogo-confirmacion" aria-labelledby="dialogo-titulo">
+    <div slot="headline" id="dialogo-titulo">Tu lugar está reservado</div>
+    <div slot="content">
+      <p class="dialogo__intro">Te esperamos el jueves 3 de diciembre a las 7:00 p.m. Presenta este código al llegar:</p>
+      <p class="dialogo__codigo" data-codigo>ALT-0000</p>
+      <dl class="dialogo__resumen" data-resumen></dl>
+      <p class="dialogo__nota">Ejercicio académico: no se envió ningún correo ni se guardó el registro.</p>
+    </div>
+    <div slot="actions">
+      <md-text-button data-cerrar>Entendido</md-text-button>
+    </div>
+  </md-dialog>
+
+  <footer class="pie">
+    <div class="contenedor">
+      <div class="pie__rejilla">
+        <div>
+          <a class="marca" href="../index.html" aria-label="ALTURA, inicio">
+            <span class="marca__sello" aria-hidden="true">A</span>
+            <span class="marca__texto">ALTURA<small>café de especialidad</small></span>
+          </a>
+          <p class="pie__nota">
+            Propuesto 4 de la Sesión 16 · Registro con Material Web:
+            componentes oficiales, tokens propios y validación en JavaScript.
+          </p>
+        </div>
+        <nav class="pie__enlaces" aria-label="Enlaces del proyecto">
+          <a href="../index.html">Inicio</a>
+          <a href="../propuesto-1-contacto/index.html">Contacto</a>
+          <a href="../propuesto-2-carta/index.html">Carta</a>
+          <a href="../propuesto-3-temas/index.html">Temas</a>
+          <a href="../index.html#clase">Ejercicios de clase</a>
+        </nav>
+      </div>
+      <div class="pie__firma">
+        <span>© <span data-anio>2026</span> ALTURA · César Huaripaucar · UTP</span>
+        <span>Material Web + CSS + JavaScript</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/ui.js" defer></script>
+  <script type="module" src="registro.js"></script>
+</body>
+</html>

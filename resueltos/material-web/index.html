@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es" data-tema="claro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio 3 · Material Web — ALTURA</title>
+  <meta name="description" content="Ejercicio resuelto 3 de la Sesión 16: componentes oficiales de Material Web con un tema propio, servidos desde un servidor local.">
+  <link rel="icon" href="../../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,300..500,0..1,0&display=swap" rel="stylesheet">
+  <script src="../../assets/js/theme.js"></script>
+  <script type="importmap">
+    {
+      "imports": {
+        "@material/web/": "https://esm.run/@material/web/"
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="material-web.css">
+</head>
+<body data-pagina="clase">
+  <a class="salto-contenido" href="#contenido">Saltar al contenido</a>
+
+  <header class="topbar" data-topbar data-nav="cerrada">
+    <div class="topbar__inner">
+      <a class="marca" href="../../index.html" aria-label="ALTURA, inicio">
+        <span class="marca__sello" aria-hidden="true">A</span>
+        <span class="marca__texto">ALTURA<small>café de especialidad</small></span>
+      </a>
+      <nav class="nav" id="nav-principal" aria-label="Navegación principal">
+        <a class="nav__enlace" data-nav="inicio" href="../../index.html">Inicio</a>
+        <a class="nav__enlace" data-nav="contacto" href="../../propuesto-1-contacto/index.html">Contacto</a>
+        <a class="nav__enlace" data-nav="carta" href="../../propuesto-2-carta/index.html">Carta</a>
+        <a class="nav__enlace" data-nav="temas" href="../../propuesto-3-temas/index.html">Temas</a>
+        <a class="nav__enlace" data-nav="registro" href="../../propuesto-4-registro/index.html">Registro</a>
+        <a class="nav__enlace" data-nav="clase" href="../../index.html#clase">Clase</a>
+      </nav>
+      <div class="topbar__acciones">
+        <button class="icon-btn" type="button" data-tema-toggle aria-pressed="false" aria-label="Activar tema oscuro">
+          <span class="material-symbols-outlined" data-tema-icono aria-hidden="true">dark_mode</span>
+        </button>
+        <button class="icon-btn nav-abrir" type="button" data-nav-toggle aria-expanded="false" aria-controls="nav-principal" aria-label="Abrir menú">
+          <span class="material-symbols-outlined" aria-hidden="true">menu</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenido" class="pagina ej3">
+    <div class="contenedor">
+      <header class="ejercicio__cabecera">
+        <div data-revelar>
+          <p class="etiqueta">Ejercicio resuelto 3 · Material Web</p>
+          <h1 class="titulo-pagina">Componentes ajenos,<br><em>marca propia.</em></h1>
+        </div>
+        <p data-revelar style="--retraso:80ms">
+          Los <code>&lt;md-*&gt;</code> traen la animación, el ripple y la accesibilidad.
+          El color y la tipografía siguen viniendo de nuestros tokens.
+        </p>
+      </header>
+
+      <div class="ej3-rejilla">
+        <section class="panel mw-demo" aria-labelledby="titulo-demo" data-revelar>
+          <p class="etiqueta">Demostración</p>
+          <h2 class="mw-demo__titulo" id="titulo-demo">Prueba los componentes.</h2>
+
+          <md-outlined-text-field id="mw-nombre" label="Nombre" autocomplete="name"></md-outlined-text-field>
+          <md-outlined-text-field id="mw-correo" label="Correo" type="email" autocomplete="email"></md-outlined-text-field>
+
+          <div class="mw-fila">
+            <md-filled-button data-aceptar>Aceptar</md-filled-button>
+            <md-outlined-button data-cancelar>Cancelar</md-outlined-button>
+            <md-text-button data-info>Más info</md-text-button>
+          </div>
+
+          <label class="mw-switch">
+            <md-switch id="mw-aviso" touch-target="wrapper"></md-switch>
+            <span>Recibir el aviso de nuevas catas.</span>
+          </label>
+
+          <p class="mw-nota">Mantén presionado un botón: la onda (ripple) la dibuja el propio componente.</p>
+        </section>
+
+        <aside class="ej3-lado" data-revelar style="--retraso:80ms">
+          <section class="panel mw-panel" aria-labelledby="titulo-servidor">
+            <p class="etiqueta">Servidor local</p>
+            <h2 class="mw-panel__titulo" id="titulo-servidor">Sin servidor,<br><em>no hay componentes.</em></h2>
+            <p class="mw-panel__texto">
+              Los módulos no se cargan desde <code>file://</code>. Desde la raíz
+              del proyecto, en CMD o Git Bash:
+            </p>
+            <pre class="mw-codigo"><code>npx http-server -p 8080</code></pre>
+            <p class="mw-panel__texto">
+              Luego abre <strong>http://localhost:8080/resueltos/material-web/</strong>
+              y navega hasta esta página. Para detener el servidor, <kbd>Ctrl</kbd> + <kbd>C</kbd>.
+            </p>
+            <p class="mw-panel__fuente">
+              Componentes: <code>esm.run/@material/web</code> · carga por red,
+              requiere internet.
+            </p>
+          </section>
+        </aside>
+      </div>
+
+      <section class="claves" aria-label="Qué demuestra el ejercicio">
+        <ol class="claves__lista">
+          <li data-revelar>
+            <span class="claves__num" aria-hidden="true">01</span>
+            <h2>Sin framework</h2>
+            <p>Cada <code>md-*</code> es un elemento personalizado. El importmap le dice al navegador de dónde bajarlo.</p>
+          </li>
+          <li data-revelar style="--retraso:70ms">
+            <span class="claves__num" aria-hidden="true">02</span>
+            <h2>Tema propio</h2>
+            <p>Los <code>--md-sys-color-*</code> apuntan a <code>tokens.css</code>, así que el modo oscuro también alcanza a los componentes.</p>
+          </li>
+          <li data-revelar style="--retraso:140ms">
+            <span class="claves__num" aria-hidden="true">03</span>
+            <h2>Detalles incluidos</h2>
+            <p>Ripple, foco visible y estados de error vienen resueltos. Nosotros solo damos los valores de marca.</p>
+          </li>
+        </ol>
+      </section>
+    </div>
+  </main>
+
+  <md-fab data-fab aria-label="Agregar al pedido">
+    <md-icon slot="icon">add</md-icon>
+  </md-fab>
+
+  <footer class="pie">
+    <div class="contenedor">
+      <div class="pie__rejilla">
+        <div>
+          <a class="marca" href="../../index.html" aria-label="ALTURA, inicio">
+            <span class="marca__sello" aria-hidden="true">A</span>
+            <span class="marca__texto">ALTURA<small>café de especialidad</small></span>
+          </a>
+          <p class="pie__nota">
+            Ejercicio resuelto 3 · Componentes oficiales de Material Web
+            con tema propio, servidos desde un servidor local.
+          </p>
+        </div>
+        <nav class="pie__enlaces" aria-label="Ejercicios de clase">
+          <a href="../../index.html">Inicio</a>
+          <a href="../tarjeta/index.html">Clase · tarjeta</a>
+          <a href="../formulario/index.html">Clase · formulario</a>
+          <a href="../../index.html#clase">Todos los ejercicios</a>
+        </nav>
+      </div>
+      <div class="pie__firma">
+        <span>© <span data-anio>2026</span> ALTURA · César Huaripaucar · UTP</span>
+        <span>Material Web + JavaScript</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/ui.js" defer></script>
+  <script type="module" src="material-web.js"></script>
+</body>
+</html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es" data-tema="claro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Temas y contraste · ALTURA — Sesión 16</title>
+  <meta name="description" content="Comparador de tema claro y oscuro, roles de color Material 3 y contraste WCAG calculado en el navegador. Ejercicio 3 de la Sesión 16.">
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,300..500,0..1,0&display=swap" rel="stylesheet">
+  <script src="../assets/js/theme.js"></script>
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="temas.css">
+</head>
+<body data-pagina="temas">
+  <a class="salto-contenido" href="#contenido">Saltar al contenido</a>
+
+  <header class="topbar" data-topbar data-nav="cerrada">
+    <div class="topbar__inner">
+      <a class="marca" href="../index.html" aria-label="ALTURA, inicio">
+        <span class="marca__sello" aria-hidden="true">A</span>
+        <span class="marca__texto">ALTURA<small>café de especialidad</small></span>
+      </a>
+      <nav class="nav" id="nav-principal" aria-label="Navegación principal">
+        <a class="nav__enlace" data-nav="inicio" href="../index.html">Inicio</a>
+        <a class="nav__enlace" data-nav="contacto" href="../propuesto-1-contacto/index.html">Contacto</a>
+        <a class="nav__enlace" data-nav="carta" href="../propuesto-2-carta/index.html">Carta</a>
+        <a class="nav__enlace" data-nav="temas" href="index.html">Temas</a>
+        <a class="nav__enlace" data-nav="registro" href="../propuesto-4-registro/index.html">Registro</a>
+        <a class="nav__enlace" data-nav="clase" href="../index.html#clase">Clase</a>
+      </nav>
+      <div class="topbar__acciones">
+        <button class="icon-btn" type="button" data-tema-toggle aria-pressed="false" aria-label="Activar tema oscuro">
+          <span class="material-symbols-outlined" data-tema-icono aria-hidden="true">dark_mode</span>
+        </button>
+        <button class="icon-btn nav-abrir" type="button" data-nav-toggle aria-expanded="false" aria-controls="nav-principal" aria-label="Abrir menú">
+          <span class="material-symbols-outlined" aria-hidden="true">menu</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenido" class="pagina">
+    <div class="contenedor">
+      <section class="temas-hero" aria-labelledby="titulo-temas">
+        <div data-revelar>
+          <p class="etiqueta">Propuesto 3 · Tema claro y oscuro</p>
+          <h1 class="titulo-pagina" id="titulo-temas">La misma carta,<br><em>dos luces.</em></h1>
+          <p class="temas-hero__bajada">
+            El tema no repinta los componentes: reescribe los roles de color.
+            Aquí puedes ver los dos temas al mismo tiempo y comprobar el
+            contraste de cada pareja de texto.
+          </p>
+        </div>
+
+        <div class="tema-control" data-revelar style="--retraso:90ms">
+          <p class="etiqueta">Tema de la página</p>
+          <div class="tema-control__fila">
+            <span class="material-symbols-outlined" aria-hidden="true">light_mode</span>
+            <label class="interruptor" for="tema-pagina">
+              <input type="checkbox" id="tema-pagina" data-tema-switch>
+              <span class="interruptor__pista" aria-hidden="true"></span>
+              <span class="interruptor__texto visualmente-oculto">Cambiar entre tema claro y oscuro</span>
+            </label>
+            <span class="material-symbols-outlined" aria-hidden="true">dark_mode</span>
+          </div>
+          <p class="tema-control__estado">Activo ahora: <strong data-tema-actual>Sala</strong></p>
+          <p class="tema-control__nota">Los paneles de abajo se quedan fijos para que la comparación tenga sentido.</p>
+        </div>
+      </section>
+
+      <section class="vistas" aria-labelledby="titulo-comparador">
+        <header class="bloque__cabecera" data-revelar>
+          <div>
+            <p class="etiqueta">Comparador</p>
+            <h2 class="titulo-bloque" id="titulo-comparador">El mismo componente,<br><em>dos atmósferas.</em></h2>
+          </div>
+          <p>Mismos componentes, mismos textos, mismas sombras. Solo cambian los valores de los roles.</p>
+        </header>
+
+        <div class="vistas__rejilla">
+          <article class="vista" data-tema="claro" data-revelar>
+            <header class="vista__barra">
+              <span class="vista__nombre"><span class="vista__punto" aria-hidden="true"></span> Sala</span>
+              <span class="vista__hora">08:42</span>
+            </header>
+            <div class="vista__cuerpo">
+              <figure class="vista__media media">
+                <img data-foto loading="lazy" src="../assets/img/taza-vapor.jpg" alt="Taza de café humeante en una mesa">
+              </figure>
+              <p class="vista__tipo">Cajamarca · Lavado</p>
+              <div class="vista__cabecera">
+                <h3>La Colmena</h3>
+                <span class="vista__precio">S/ 68</span>
+              </div>
+              <p class="vista__notas">Panela · mandarina · cacao</p>
+              <span class="chip vista__chip" aria-hidden="true">1.950 msnm</span>
+              <div class="campo vista__campo">
+                <input type="text" id="vista-correo-claro" placeholder=" ">
+                <label for="vista-correo-claro">Tu correo</label>
+              </div>
+              <div class="vista__acciones">
+                <button class="btn btn--relleno" type="button">Pedir</button>
+                <button class="btn btn--texto" type="button">Ver ficha</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="vista" data-tema="oscuro" data-revelar style="--retraso:90ms">
+            <header class="vista__barra">
+              <span class="vista__nombre"><span class="vista__punto" aria-hidden="true"></span> Noche</span>
+              <span class="vista__hora">23:17</span>
+            </header>
+            <div class="vista__cuerpo">
+              <figure class="vista__media media">
+                <img data-foto loading="lazy" src="../assets/img/taza-vapor.jpg" alt="Taza de café humeante en una mesa">
+              </figure>
+              <p class="vista__tipo">Cajamarca · Lavado</p>
+              <div class="vista__cabecera">
+                <h3>La Colmena</h3>
+                <span class="vista__precio">S/ 68</span>
+              </div>
+              <p class="vista__notas">Panela · mandarina · cacao</p>
+              <span class="chip vista__chip" aria-hidden="true">1.950 msnm</span>
+              <div class="campo vista__campo">
+                <input type="text" id="vista-correo-oscuro" placeholder=" ">
+                <label for="vista-correo-oscuro">Tu correo</label>
+              </div>
+              <div class="vista__acciones">
+                <button class="btn btn--relleno" type="button">Pedir</button>
+                <button class="btn btn--texto" type="button">Ver ficha</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="roles" aria-labelledby="titulo-roles">
+        <header class="bloque__cabecera" data-revelar>
+          <div>
+            <p class="etiqueta">Roles de color</p>
+            <h2 class="titulo-bloque" id="titulo-roles">Los mismos nombres,<br><em>otros valores.</em></h2>
+          </div>
+          <p>
+            Siete roles de <code>tokens.css</code> en ambos temas. El valor cambia;
+            el nombre y el uso no. Por eso los componentes no necesitan reescribirse.
+          </p>
+        </header>
+
+        <div class="tabla-envoltura" data-revelar>
+          <div class="roles__tabla">
+            <div class="roles__head" role="row">
+              <span>Token</span><span>Sala</span><span>Noche</span>
+            </div>
+            <div data-roles-filas></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="contraste" aria-labelledby="titulo-contraste">
+        <div class="contraste__rejilla">
+          <div class="contraste__intro" data-revelar>
+            <p class="etiqueta">Prueba de contraste</p>
+            <h2 class="titulo-bloque" id="titulo-contraste">No se estima.<br><em>Se mide.</em></h2>
+            <p>
+              Cada pareja se calcula con la fórmula de luminancia relativa de WCAG 2.1.
+              Para texto normal, AA exige 4.5:1; AAA, 7:1. Los resultados cambian si
+              cambias el tema de la página.
+            </p>
+            <ul class="leyenda">
+              <li><span class="apto apto--aaa">AAA</span> 7:1 o más</li>
+              <li><span class="apto apto--aa">AA</span> 4.5:1 o más</li>
+              <li><span class="apto apto--bajo">Bajo</span> menos de 4.5:1</li>
+            </ul>
+          </div>
+
+          <div class="contraste__tabla-envoltura" data-revelar style="--retraso:80ms">
+            <div class="contraste__tabla">
+              <div class="contraste__head" role="row">
+                <span>Pareja</span><span>Sala</span><span>Noche</span>
+              </div>
+              <div data-contraste-filas></div>
+            </div>
+            <p class="contraste__resumen" data-contraste-resultado aria-live="polite"></p>
+            <p class="contraste__fuente">
+              Cálculo hecho en el navegador con las variables CSS de los paneles.
+              <span data-version>WCAG 2.1</span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="lecciones" aria-labelledby="titulo-lecciones">
+        <header class="bloque__cabecera" data-revelar>
+          <div>
+            <p class="etiqueta">Lo que cambia</p>
+            <h2 class="titulo-bloque" id="titulo-lecciones">Un tema no es<br><em>un filtro invertido.</em></h2>
+          </div>
+          <p>Estas son las decisiones que hacen que el modo noche no se sienta como un negativo de foto.</p>
+        </header>
+        <ol class="lecciones__lista">
+          <li data-revelar>
+            <span class="lecciones__num" aria-hidden="true">01</span>
+            <h3>Se cambian variables, no reglas</h3>
+            <p>Los 20 roles viven en un solo bloque. Ningún botón, tarjeta o campo sabe en qué tema está.</p>
+          </li>
+          <li data-revelar style="--retraso:70ms">
+            <span class="lecciones__num" aria-hidden="true">02</span>
+            <h3>El contraste se comprueba</h3>
+            <p>La tabla de arriba se genera leyendo los valores reales, no una lista escrita a mano.</p>
+          </li>
+          <li data-revelar style="--retraso:140ms">
+            <span class="lecciones__num" aria-hidden="true">03</span>
+            <h3>En oscuro, la elevación pesa menos</h3>
+            <p>La sombra se apoya en el tono de superficie y en el borde; el contraste hace el resto.</p>
+          </li>
+        </ol>
+      </section>
+    </div>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor">
+      <div class="pie__rejilla">
+        <div>
+          <a class="marca" href="../index.html" aria-label="ALTURA, inicio">
+            <span class="marca__sello" aria-hidden="true">A</span>
+            <span class="marca__texto">ALTURA<small>café de especialidad</small></span>
+          </a>
+          <p class="pie__nota">
+            Propuesto 3 de la Sesión 16 · Un interruptor, dos temas y
+            contraste calculado con JavaScript a partir de los tokens.
+          </p>
+        </div>
+        <nav class="pie__enlaces" aria-label="Enlaces del proyecto">
+          <a href="../index.html">Inicio</a>
+          <a href="../propuesto-1-contacto/index.html">Contacto</a>
+          <a href="../propuesto-2-carta/index.html">Carta</a>
+          <a href="../propuesto-4-registro/index.html">Registro</a>
+          <a href="../index.html#clase">Ejercicios de clase</a>
+        </nav>
+      </div>
+      <div class="pie__firma">
+        <span>© <span data-anio>2026</span> ALTURA · César Huaripaucar · UTP</span>
+        <span>HTML + CSS + JavaScript <span class="material-symbols-outlined" aria-hidden="true">coffee</span></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/ui.js" defer></script>
+  <script src="temas.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,224 @@
+/* ============================================================
+   Ejercicio resuelto 3 · Material Web con tema propio
+   ============================================================ */
+
+/* Puente de tokens hacia los componentes md-* */
+body {
+  --md-sys-color-primary: var(--primary);
+  --md-sys-color-on-primary: var(--on-primary);
+  --md-sys-color-primary-container: var(--primary-container);
+  --md-sys-color-on-primary-container: var(--on-primary-container);
+
+  --md-sys-color-secondary: var(--secondary);
+  --md-sys-color-on-secondary: var(--on-secondary);
+  --md-sys-color-secondary-container: var(--secondary-container);
+  --md-sys-color-on-secondary-container: var(--on-secondary-container);
+
+  --md-sys-color-tertiary: var(--tertiary);
+  --md-sys-color-on-tertiary: var(--on-tertiary);
+  --md-sys-color-tertiary-container: var(--tertiary-container);
+  --md-sys-color-on-tertiary-container: var(--on-tertiary-container);
+
+  --md-sys-color-surface: var(--surface);
+  --md-sys-color-surface-container-lowest: var(--surface);
+  --md-sys-color-surface-container-low: var(--surface-container-low);
+  --md-sys-color-surface-container: var(--surface-container);
+  --md-sys-color-surface-container-high: var(--surface-container-high);
+  --md-sys-color-surface-container-highest: var(--surface-container-high);
+  --md-sys-color-on-surface: var(--on-surface);
+  --md-sys-color-on-surface-variant: var(--on-surface-variant);
+  --md-sys-color-outline: var(--outline);
+  --md-sys-color-outline-variant: var(--outline-variant);
+  --md-sys-color-surface-tint: var(--primary);
+  --md-sys-color-inverse-surface: var(--inverse-surface);
+  --md-sys-color-inverse-on-surface: var(--inverse-on-surface);
+  --md-sys-color-error: var(--error);
+  --md-sys-color-on-error: var(--on-error);
+  --md-sys-color-error-container: var(--error-container);
+  --md-sys-color-on-error-container: var(--on-error-container);
+}
+
+md-outlined-text-field:not(:defined) { display: block; min-height: 56px; }
+md-switch:not(:defined),
+md-fab:not(:defined) { display: none; }
+
+.ejercicio__cabecera {
+  display: grid;
+  grid-template-columns: 1fr minmax(260px, 420px);
+  align-items: end;
+  gap: clamp(20px, 4vw, 64px);
+}
+.ejercicio__cabecera > p {
+  margin: 0 0 6px;
+  padding-left: 20px;
+  border-left: 1px solid var(--outline);
+  color: var(--on-surface-variant);
+  font-size: var(--body-s);
+  line-height: 1.65;
+}
+.ejercicio__cabecera code { font-size: .82em; }
+
+.ej3-rejilla {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, .92fr);
+  align-items: start;
+  gap: clamp(22px, 3.6vw, 44px);
+  margin-top: clamp(30px, 5vw, 56px);
+}
+
+/* Demostración */
+.mw-demo {
+  padding: clamp(22px, 3.6vw, 40px);
+  --fondo-campo: var(--surface-container-low);
+}
+.mw-demo__titulo {
+  margin: 8px 0 22px;
+  font-family: var(--fuente-display);
+  font-size: clamp(1.6rem, 2.6vw, 2rem);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -.02em;
+}
+.mw-demo md-outlined-text-field {
+  width: 100%;
+  margin-bottom: 10px;
+}
+.mw-fila {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+.mw-switch {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+  font-size: var(--body-s);
+  color: var(--on-surface-variant);
+  cursor: pointer;
+}
+.mw-nota {
+  margin: 20px 0 0;
+  padding-top: 14px;
+  border-top: 1px solid var(--outline-variant);
+  font-size: .68rem;
+  line-height: 1.5;
+  color: var(--on-surface-variant);
+}
+
+/* Panel del servidor */
+.mw-panel { padding: clamp(20px, 3vw, 32px); }
+.mw-panel__titulo {
+  margin: 8px 0 14px;
+  font-family: var(--fuente-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -.02em;
+}
+.mw-panel__titulo em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--primary);
+}
+.mw-panel__texto {
+  margin: 0 0 12px;
+  font-size: var(--body-s);
+  line-height: 1.6;
+  color: var(--on-surface-variant);
+}
+.mw-panel__texto code,
+.mw-panel__fuente code { font-size: .82em; }
+.mw-codigo {
+  margin: 0 0 14px;
+  padding: 14px 16px;
+  overflow-x: auto;
+  border-radius: var(--radio-md);
+  background: var(--inverse-surface);
+  color: var(--inverse-on-surface);
+  font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
+  font-size: .78rem;
+  line-height: 1.6;
+}
+.mw-codigo code { padding: 0; background: none; color: inherit; }
+kbd {
+  padding: 1px 5px;
+  border: 1px solid var(--outline-variant);
+  border-bottom-width: 2px;
+  border-radius: 4px;
+  background: var(--surface-container);
+  font-family: inherit;
+  font-size: .86em;
+}
+.mw-panel__fuente {
+  margin: 0;
+  padding-top: 12px;
+  border-top: 1px solid var(--outline-variant);
+  font-size: .66rem;
+  line-height: 1.5;
+  color: var(--on-surface-variant);
+}
+
+/* FAB de Material Web */
+md-fab[data-fab] {
+  position: fixed;
+  right: clamp(18px, 4vw, 34px);
+  bottom: clamp(18px, 4vw, 34px);
+  z-index: 70;
+}
+
+/* Claves */
+.claves { margin-top: clamp(52px, 8vw, 92px); }
+.claves__lista {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(22px, 3.5vw, 44px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.claves__lista li { padding-top: 18px; border-top: 1px solid var(--outline); }
+.claves__num {
+  font-family: var(--fuente-display);
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--primary);
+}
+.claves__lista h2 {
+  margin: 10px 0 6px;
+  font-family: var(--fuente-display);
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: -.015em;
+}
+.claves__lista p {
+  margin: 0;
+  font-size: var(--body-s);
+  line-height: 1.65;
+  color: var(--on-surface-variant);
+}
+.claves__lista code { font-size: .8em; }
+
+@media (max-width: 1000px) {
+  .ej3-rejilla { grid-template-columns: 1fr; }
+  .mw-panel { max-width: 560px; }
+}
+
+@media (max-width: 1040px) {
+  .ejercicio__cabecera { grid-template-columns: 1fr; gap: 18px; }
+  .ejercicio__cabecera > p { border-left: 0; padding-left: 0; max-width: 62ch; }
+}
+
+@media (max-width: 860px) {
+  .claves__lista { grid-template-columns: 1fr; gap: 26px; }
+  .claves__lista li { max-width: 560px; }
+}
+
+@media (max-width: 560px) {
+  .mw-demo, .mw-panel { padding: 18px; }
+  .mw-fila md-filled-button,
+  .mw-fila md-outlined-button,
+  .mw-fila md-text-button { flex: 1 1 100%; }
+}
